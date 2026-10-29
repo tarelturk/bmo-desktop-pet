@@ -8,19 +8,19 @@ A tiny mint-green pal with a little game on its screen. 🩵
 
 | Idle | Working — Pong | Waiting |
 |:---:|:---:|:---:|
-| ![BMO idle animation](media/idle.gif) | ![BMO plays Pong](media/running.gif) | ![BMO waiting](media/waiting.gif) |
+| ![BMO idle animation](media/gallery-v2/idle.gif) | ![BMO plays Pong](media/gallery-v2/running.gif) | ![BMO waiting](media/gallery-v2/waiting.gif) |
 
 | Waving | Jumping | Reviewing |
 |:---:|:---:|:---:|
-| ![BMO waves](media/waving.gif) | ![BMO jumps](media/jumping.gif) | ![BMO reviews](media/review.gif) |
+| ![BMO waves](media/gallery-v2/waving.gif) | ![BMO jumps](media/gallery-v2/jumping.gif) | ![BMO reviews](media/gallery-v2/review.gif) |
 
 | Blocked | Walking right | Walking left |
 |:---:|:---:|:---:|
-| ![BMO blocked](media/failed.gif) | ![BMO walks right](media/running-right.gif) | ![BMO walks left](media/running-left.gif) |
+| ![BMO blocked](media/gallery-v2/failed.gif) | ![BMO walks right](media/gallery-v2/running-right.gif) | ![BMO walks left](media/gallery-v2/running-left.gif) |
 
 | Looking around | Idle and jump |
 |:---:|:---:|
-| ![BMO looks around](media/look-loop.gif) | ![BMO jumps from idle](media/idle-jump-idle.gif) |
+| ![BMO looks around](media/gallery-v2/look-loop.gif) | ![BMO jumps from idle](media/gallery-v2/idle-jump-idle.gif) |
 
 The gallery uses compact, animated previews of the existing sprite frames. 🩵
 
