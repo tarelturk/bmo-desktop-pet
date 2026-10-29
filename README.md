@@ -24,24 +24,37 @@ A tiny mint-green pal with a little game on its screen. 🩵
 
 ## What this project changes
 
-- Loops BMO's six-frame Pong animation for the entire working state.
-- Tracks pointer movement while BMO is idle and turns its gaze toward it.
-- Makes blinks feel snappier by shortening the eye-closed frames.
-- Uses the existing BMO sprite art.
+- Loops BMO's six-frame Pong animation while work is running.
+- Tracks pointer movement and turns BMO's gaze while idle.
+- Makes eye blinks feel quicker by shortening the closed-eye frames.
+- Uses the existing BMO sprite artwork.
 
-## Install
+## Platform support
 
-This is an experimental patch for one specific Linux build of the ChatGPT desktop app.
+| Platform | Status |
+|---|---|
+| Linux (X11) | Patch targets one pinned ChatGPT desktop build. |
+| Linux (Wayland) | Experimental; launch through XWayland. Pointer tracking depends on compositor setup. |
+| macOS | Not yet ported or tested. |
+| Windows | Not yet ported or tested. |
 
-1. Install the compatible app build and keep its original archive backup.
+We want to bring this project to macOS and Windows too. The current patch changes packaged desktop-app code and a system-specific launch/install path, so each platform needs its own safe installer and a matching app-build check. We need maintainers with those systems to validate a port before calling it supported. If you'd like to help, open an issue with the app version, platform, and test results.
+
+## Linux install
+
+This experimental patch targets a specific Linux app archive. It checks the original archive hash and stops if it finds another version. App updates may replace the patch.
+
+1. Install the matching app build and preserve the original archive backup.
 2. Clone this repository and run `python3 build_patch.py`.
-3. Review the generated archive and installer before applying the patch. Installation requires administrator privileges.
-4. Start ChatGPT with `bash restart-x11.sh`.
+3. Review the generated archive and installer before applying it. Installation needs administrator privileges.
+4. Start the app with `bash restart-x11.sh`.
 
-The patch builder checks the exact original archive hash and stops on other versions. ChatGPT updates may replace the patch. On Wayland, the launcher uses XWayland to make global pointer tracking available; behavior can vary by desktop setup. The full application is never distributed here.
+The preview GIFs show sprite frames, not recordings of the live app. The full app is never distributed here.
 
-## Project notes
+## Disclaimer
 
-The animations above preview the sprite frames. They are not recordings of the live app. The patch has automated checks, but compatibility is limited to the listed app build and has not been verified on every Linux desktop.
+Unofficial community project. Not affiliated with or endorsed by OpenAI or Cartoon Network. ChatGPT and BMO belong to their respective owners. Use only with software you are authorized to modify. See [LICENSE](LICENSE).
 
-Unofficial community project. Not affiliated with or endorsed by OpenAI or Cartoon Network. ChatGPT and BMO belong to their respective owners. See [LICENSE](LICENSE) and [SECURITY](SECURITY.md).
+## Contributing
+
+Bug reports and platform test results are welcome. Include your operating system, desktop/session type, app version, and what you observed. Never attach credentials, account data, or a full app archive.
