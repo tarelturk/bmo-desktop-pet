@@ -1,49 +1,47 @@
 # BMO Desktop Pet
 
-A friendlier BMO for the ChatGPT desktop companion: **Pong while work is running, mouse-aware eyes while idle, and quicker, natural blinks.** A little pixel buddy to keep you company while you work. 💚
+A tiny mint-green pal with a little game on its screen. 🩵
 
-![BMO animation preview](https://github.com/tarelturk/bmo-desktop-pet/raw/main/media/bmo-preview.gif)
+**Pong while ChatGPT is working. Curious eyes that follow the mouse while idle. Quick, natural blinks.** A friendly desktop companion with a full set of playful animations.
 
-## What it does
+## BMO in motion
 
-- Keeps the Pong animation looping for the full running state.
-- Lets BMO glance toward the pointer while idle.
-- Shortens the closed-eye frames so blinking feels crisp.
-- Leaves the original sprite artwork intact.
+| Idle | Working — Pong | Waiting |
+|:---:|:---:|:---:|
+| ![BMO idle animation](media/idle.gif) | ![BMO plays Pong](media/running.gif) | ![BMO waiting](media/waiting.gif) |
 
-## Compatibility
+| Waving | Jumping | Reviewing |
+|:---:|:---:|:---:|
+| ![BMO waves](media/waving.gif) | ![BMO jumps](media/jumping.gif) | ![BMO reviews](media/review.gif) |
 
-This experimental patch targets one specific Linux desktop build of ChatGPT. It checks the original app archive's SHA-256 before changing anything and stops if it sees a different build. App updates can replace the patch.
+| Blocked | Walking right | Walking left |
+|:---:|:---:|:---:|
+| ![BMO blocked](media/failed.gif) | ![BMO walks right](media/running-right.gif) | ![BMO walks left](media/running-left.gif) |
 
-On Wayland, the included launcher tries XWayland because Electron's global pointer-position API is unavailable on Wayland. Pointer tracking can vary with the compositor and XWayland setup.
+| Looking around | Idle and jump |
+|:---:|:---:|
+| ![BMO looks around](media/look-loop.gif) | ![BMO jumps from idle](media/idle-jump-idle.gif) |
+
+## What this project changes
+
+- Loops BMO's six-frame Pong animation for the entire working state.
+- Tracks pointer movement while BMO is idle and turns its gaze toward it.
+- Makes blinks feel snappier by shortening the eye-closed frames.
+- Uses the existing BMO sprite art.
 
 ## Install
 
-1. Install the matching ChatGPT desktop build and keep its original app archive backup.
-2. Clone this repository.
-3. Build a patched archive locally:
+This is an experimental patch for one specific Linux build of the ChatGPT desktop app.
 
-   ```bash
-   python3 build_patch.py
-   ```
+1. Install the compatible app build and keep its original archive backup.
+2. Clone this repository and run `python3 build_patch.py`.
+3. Review the generated archive and installer before applying the patch. Installation requires administrator privileges.
+4. Start ChatGPT with `bash restart-x11.sh`.
 
-4. Review the patch and install instructions before proceeding. The guarded installer needs administrator access.
-5. Start ChatGPT through `bash restart-x11.sh`.
+The patch builder checks the exact original archive hash and stops on other versions. ChatGPT updates may replace the patch. On Wayland, the launcher uses XWayland to make global pointer tracking available; behavior can vary by desktop setup. The full application is never distributed here.
 
-The full ChatGPT application is **not** included or redistributed. The patch is built on your own computer from your installed app. See [SECURITY.md](SECURITY.md) and [LICENSE](LICENSE).
+## Project notes
 
-## Restore
+The animations above preview the sprite frames. They are not recordings of the live app. The patch has automated checks, but compatibility is limited to the listed app build and has not been verified on every Linux desktop.
 
-Use the installer's restore option, then start ChatGPT normally from your applications menu.
-
-## Preview
-
-The preview shows the custom sprite animation. It is a sample of the frames, not a recording of the live desktop app.
-
-## Disclaimer
-
-Unofficial community project. Not affiliated with or endorsed by OpenAI or Cartoon Network. ChatGPT and BMO remain the property of their respective owners. Use only with software you are authorized to modify; you are responsible for complying with applicable license terms.
-
-## Contributing
-
-Bug reports and compatibility notes are welcome. Please include your Linux desktop session type, ChatGPT app build, and the exact animation behavior you observed. Never attach credentials, account data, or a full app archive.
+Unofficial community project. Not affiliated with or endorsed by OpenAI or Cartoon Network. ChatGPT and BMO belong to their respective owners. See [LICENSE](LICENSE) and [SECURITY](SECURITY.md).
